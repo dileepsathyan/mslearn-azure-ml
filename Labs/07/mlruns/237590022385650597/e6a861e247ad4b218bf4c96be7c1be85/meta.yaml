@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/Dsathyan/azure-ml-labs/Labs/07/mlruns/237590022385650597/e6a861e247ad4b218bf4c96be7c1be85/artifacts
+end_time: 1760468331657
+entry_point_name: ''
+experiment_id: '237590022385650597'
+lifecycle_stage: active
+run_id: e6a861e247ad4b218bf4c96be7c1be85
+run_name: stately-bird-919
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760468331582
+status: 3
+tags: []
+user_id: dsathyan

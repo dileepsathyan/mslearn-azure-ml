@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/Dsathyan/azure-ml-labs/Labs/07/mlruns/237590022385650597/714c1da7c9834afda1ae20a68f2cb05a/artifacts
+end_time: 1760468300836
+entry_point_name: ''
+experiment_id: '237590022385650597'
+lifecycle_stage: active
+run_id: 714c1da7c9834afda1ae20a68f2cb05a
+run_name: nosy-auk-917
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760468300774
+status: 3
+tags: []
+user_id: dsathyan

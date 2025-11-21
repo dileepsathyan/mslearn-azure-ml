@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/Dsathyan/azure-ml-labs/Labs/07/mlruns/237590022385650597/558a183c9c024e1fa442e778bd3d62cc/artifacts
+end_time: 1760468337945
+entry_point_name: ''
+experiment_id: '237590022385650597'
+lifecycle_stage: active
+run_id: 558a183c9c024e1fa442e778bd3d62cc
+run_name: gentle-snake-452
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760468337818
+status: 3
+tags: []
+user_id: dsathyan

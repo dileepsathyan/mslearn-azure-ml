@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/Dsathyan/azure-ml-labs/Labs/07/mlruns/237590022385650597/2bc45d2ac6e044db90ed0da23922390a/artifacts
+end_time: 1760468286726
+entry_point_name: ''
+experiment_id: '237590022385650597'
+lifecycle_stage: active
+run_id: 2bc45d2ac6e044db90ed0da23922390a
+run_name: nimble-rook-605
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760468281429
+status: 3
+tags: []
+user_id: dsathyan

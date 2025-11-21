@@ -1,0 +1,6 @@
+artifact_location: file:///c:/Users/Dsathyan/azure-ml-labs/Labs/07/mlruns/237590022385650597
+creation_time: 1760468268990
+experiment_id: '237590022385650597'
+last_update_time: 1760468268990
+lifecycle_stage: active
+name: mlflow-experiment-diabetes

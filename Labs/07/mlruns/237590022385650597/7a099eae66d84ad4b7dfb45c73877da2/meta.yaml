@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/Dsathyan/azure-ml-labs/Labs/07/mlruns/237590022385650597/7a099eae66d84ad4b7dfb45c73877da2/artifacts
+end_time: 1760468296405
+entry_point_name: ''
+experiment_id: '237590022385650597'
+lifecycle_stage: active
+run_id: 7a099eae66d84ad4b7dfb45c73877da2
+run_name: unequaled-toad-62
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760468296348
+status: 3
+tags: []
+user_id: dsathyan
