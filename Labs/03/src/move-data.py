@@ -17,7 +17,7 @@ def get_data(path):
     # Count the rows and print the result
     row_count = (len(df))
     print('Analyzing {} rows of data'.format(row_count))
-    
+
     return df
 
 def parse_args():
