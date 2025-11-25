@@ -6,8 +6,9 @@ if [[ -n "$1" ]]; then
 else
   # Generate random suffix from UUID if none was provided
   guid=$(cat /proc/sys/kernel/random/uuid)
-  suffix=${guid//[-]/}
-  suffix=${suffix:0:18}
+  # suffix=${guid//[-]/}
+  # suffix=${suffix:0:18}
+  suffix = "abs06"
 fi
 
 echo "Suffix: $suffix"
