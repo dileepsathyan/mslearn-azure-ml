@@ -1,5 +1,5 @@
 {
-    "subscription_id": "99082d66-2775-43ed-9cba-fbd22fd873e8",
-    "resource_group": "rg-dp100-l",
-    "workspace_name": "mlw-dp100-l"
+    "subscription_id": "38245d22-4620-4106-9d08-a07ed74df31e",
+    "resource_group": "rg-dp100-lab04",
+    "workspace_name": "mlw-dp100-labs04"
 }
