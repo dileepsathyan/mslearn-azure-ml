@@ -22,13 +22,13 @@ def get_data(path):
     # Count the rows and print the result
     row_count = (len(df))
     print('Preparing {} rows of data'.format(row_count))
-    
+
     return df
 
 # function that removes missing values
 def clean_data(df):
     df = df.dropna()
-    
+
     return df
 
 # function that normalizes the data

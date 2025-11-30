@@ -1,6 +1,5 @@
 # import libraries
 import mlflow
-import glob
 import argparse
 import pandas as pd
 import numpy as np
@@ -11,9 +10,6 @@ from sklearn.metrics import roc_curve
 import matplotlib.pyplot as plt
 
 def main(args):
-    # enable autologging
-    mlflow.autolog()
-
     # read data
     df = get_data(args.training_data)
 
@@ -23,13 +19,13 @@ def main(args):
     # train model
     model = train_model(args.reg_rate, X_train, X_test, y_train, y_test)
 
+    # evaluate model
     eval_model(model, X_test, y_test)
 
 # function that reads the data
-def get_data(data_path):
-
-    all_files = glob.glob(data_path + "/*.csv")
-    df = pd.concat((pd.read_csv(f) for f in all_files), sort=False)
+def get_data(path):
+    print("Reading data...")
+    df = pd.read_csv(path)
 
     return df
 
@@ -49,8 +45,6 @@ def train_model(reg_rate, X_train, X_test, y_train, y_test):
     print("Training model...")
     model = LogisticRegression(C=1/reg_rate, solver="liblinear").fit(X_train, y_train)
 
-    mlflow.sklearn.save_model(model, args.model_output)
-
     return model
 
 # function that evaluates the model
@@ -59,11 +53,13 @@ def eval_model(model, X_test, y_test):
     y_hat = model.predict(X_test)
     acc = np.average(y_hat == y_test)
     print('Accuracy:', acc)
+    mlflow.log_metric("training_accuracy_score", acc)
 
     # calculate AUC
     y_scores = model.predict_proba(X_test)
     auc = roc_auc_score(y_test,y_scores[:,1])
     print('AUC: ' + str(auc))
+    mlflow.log_metric("AUC", auc)
 
     # plot ROC curve
     fpr, tpr, thresholds = roc_curve(y_test, y_scores[:,1])
@@ -75,7 +71,8 @@ def eval_model(model, X_test, y_test):
     plt.xlabel('False Positive Rate')
     plt.ylabel('True Positive Rate')
     plt.title('ROC Curve')
-    plt.savefig("ROC-Curve.png") 
+    plt.savefig("ROC-Curve.png")
+    mlflow.log_artifact("ROC-Curve.png")    
 
 def parse_args():
     # setup arg parser
@@ -86,8 +83,6 @@ def parse_args():
                         type=str)
     parser.add_argument("--reg_rate", dest='reg_rate',
                         type=float, default=0.01)
-    parser.add_argument("--model_output", dest='model_output',
-                        type=str)
 
     # parse args
     args = parser.parse_args()
