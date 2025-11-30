@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/Dsathyan/azure-ml-labs/Labs/07/mlruns/237590022385650597/614a79f305014b5bb92b5aef93c2de16/artifacts
+end_time: 1764467938059
+entry_point_name: ''
+experiment_id: '237590022385650597'
+lifecycle_stage: active
+run_id: 614a79f305014b5bb92b5aef93c2de16
+run_name: painted-stork-31
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764467932796
+status: 3
+tags: []
+user_id: dsathyan

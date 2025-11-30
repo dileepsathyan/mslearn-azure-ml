@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/Dsathyan/azure-ml-labs/Labs/07/mlruns/237590022385650597/fc053d49ade34eb6ad396b782541a9f6/artifacts
+end_time: 1764469492628
+entry_point_name: ''
+experiment_id: '237590022385650597'
+lifecycle_stage: active
+run_id: fc053d49ade34eb6ad396b782541a9f6
+run_name: popular-duck-678
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764469492544
+status: 3
+tags: []
+user_id: dsathyan

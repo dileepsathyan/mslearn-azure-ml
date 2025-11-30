@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/Dsathyan/azure-ml-labs/Labs/07/mlruns/237590022385650597/14e3849d9a804f88a73324015c12e868/artifacts
+end_time: 1764469492524
+entry_point_name: ''
+experiment_id: '237590022385650597'
+lifecycle_stage: active
+run_id: 14e3849d9a804f88a73324015c12e868
+run_name: fortunate-slug-887
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764469492464
+status: 3
+tags: []
+user_id: dsathyan

@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/Dsathyan/azure-ml-labs/Labs/07/mlruns/237590022385650597/a30ec279fc0e41c382bd6acb5685b3d7/artifacts
+end_time: 1764469400191
+entry_point_name: ''
+experiment_id: '237590022385650597'
+lifecycle_stage: active
+run_id: a30ec279fc0e41c382bd6acb5685b3d7
+run_name: merciful-finch-204
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764469396039
+status: 3
+tags: []
+user_id: dsathyan

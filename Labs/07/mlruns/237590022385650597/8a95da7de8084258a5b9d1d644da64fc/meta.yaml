@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/Dsathyan/azure-ml-labs/Labs/07/mlruns/237590022385650597/8a95da7de8084258a5b9d1d644da64fc/artifacts
+end_time: 1764470386737
+entry_point_name: ''
+experiment_id: '237590022385650597'
+lifecycle_stage: active
+run_id: 8a95da7de8084258a5b9d1d644da64fc
+run_name: loud-boar-468
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764470386680
+status: 3
+tags: []
+user_id: dsathyan

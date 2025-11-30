@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/Dsathyan/azure-ml-labs/Labs/07/mlruns/237590022385650597/f4a18e1b267d4be3a0fd06d4d3a9155d/artifacts
+end_time: 1764469409747
+entry_point_name: ''
+experiment_id: '237590022385650597'
+lifecycle_stage: active
+run_id: f4a18e1b267d4be3a0fd06d4d3a9155d
+run_name: orderly-snipe-682
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764469409595
+status: 3
+tags: []
+user_id: dsathyan

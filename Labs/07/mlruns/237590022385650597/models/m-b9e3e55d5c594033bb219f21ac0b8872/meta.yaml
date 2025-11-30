@@ -1,0 +1,10 @@
+artifact_location: file:///c:/Users/Dsathyan/azure-ml-labs/Labs/07/mlruns/237590022385650597/models/m-b9e3e55d5c594033bb219f21ac0b8872/artifacts
+creation_timestamp: 1764467933232
+experiment_id: '237590022385650597'
+last_updated_timestamp: 1764467937336
+model_id: m-b9e3e55d5c594033bb219f21ac0b8872
+model_type: null
+name: model
+source_run_id: 614a79f305014b5bb92b5aef93c2de16
+status: 2
+status_message: null

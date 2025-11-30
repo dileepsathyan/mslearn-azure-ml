@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/Dsathyan/azure-ml-labs/Labs/07/mlruns/237590022385650597/a9fbf9eff01e42288a2d1ac697c57edb/artifacts
+end_time: 1764470384184
+entry_point_name: ''
+experiment_id: '237590022385650597'
+lifecycle_stage: active
+run_id: a9fbf9eff01e42288a2d1ac697c57edb
+run_name: entertaining-fox-220
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764470384106
+status: 3
+tags: []
+user_id: dsathyan

@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/Dsathyan/azure-ml-labs/Labs/07/mlruns/237590022385650597/9d5c88f06db547bda16d5b5a90230936/artifacts
+end_time: 1764469492437
+entry_point_name: ''
+experiment_id: '237590022385650597'
+lifecycle_stage: active
+run_id: 9d5c88f06db547bda16d5b5a90230936
+run_name: trusting-wren-979
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764469488844
+status: 3
+tags: []
+user_id: dsathyan

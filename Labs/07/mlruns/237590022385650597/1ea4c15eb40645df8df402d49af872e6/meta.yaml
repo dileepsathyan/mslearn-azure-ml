@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/Dsathyan/azure-ml-labs/Labs/07/mlruns/237590022385650597/1ea4c15eb40645df8df402d49af872e6/artifacts
+end_time: 1764468253733
+entry_point_name: ''
+experiment_id: '237590022385650597'
+lifecycle_stage: active
+run_id: 1ea4c15eb40645df8df402d49af872e6
+run_name: bright-crane-72
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764468253667
+status: 3
+tags: []
+user_id: dsathyan

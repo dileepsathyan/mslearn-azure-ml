@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/Dsathyan/azure-ml-labs/Labs/07/mlruns/237590022385650597/81e070a7dce64295a310c4ddb117b317/artifacts
+end_time: 1764470382831
+entry_point_name: ''
+experiment_id: '237590022385650597'
+lifecycle_stage: active
+run_id: 81e070a7dce64295a310c4ddb117b317
+run_name: masked-horse-641
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764470377125
+status: 3
+tags: []
+user_id: dsathyan

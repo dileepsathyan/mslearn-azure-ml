@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/Dsathyan/azure-ml-labs/Labs/07/mlruns/237590022385650597/259daaf7fbdd4a249a5bd0279b892bfc/artifacts
+end_time: 1764468232149
+entry_point_name: ''
+experiment_id: '237590022385650597'
+lifecycle_stage: active
+run_id: 259daaf7fbdd4a249a5bd0279b892bfc
+run_name: capricious-gull-277
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764468232092
+status: 3
+tags: []
+user_id: dsathyan

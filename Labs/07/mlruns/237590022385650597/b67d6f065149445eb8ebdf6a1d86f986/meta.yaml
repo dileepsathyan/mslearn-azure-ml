@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/Dsathyan/azure-ml-labs/Labs/07/mlruns/237590022385650597/b67d6f065149445eb8ebdf6a1d86f986/artifacts
+end_time: 1764469403601
+entry_point_name: ''
+experiment_id: '237590022385650597'
+lifecycle_stage: active
+run_id: b67d6f065149445eb8ebdf6a1d86f986
+run_name: smiling-mule-115
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764469403546
+status: 3
+tags: []
+user_id: dsathyan

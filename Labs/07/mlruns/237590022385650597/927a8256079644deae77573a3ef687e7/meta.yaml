@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/Dsathyan/azure-ml-labs/Labs/07/mlruns/237590022385650597/927a8256079644deae77573a3ef687e7/artifacts
+end_time: 1764469406944
+entry_point_name: ''
+experiment_id: '237590022385650597'
+lifecycle_stage: active
+run_id: 927a8256079644deae77573a3ef687e7
+run_name: clean-fawn-462
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764469406883
+status: 3
+tags: []
+user_id: dsathyan

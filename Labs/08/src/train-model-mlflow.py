@@ -26,7 +26,7 @@ def main(args):
 def get_data(path):
     print("Reading data...")
     df = pd.read_csv(path)
-    
+
     return df
 
 # function that splits the data
