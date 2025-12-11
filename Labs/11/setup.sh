@@ -6,11 +6,11 @@ suffix=${guid//[-]/}
 suffix=${suffix:0:18}
 
 # Set the necessary variables
-RESOURCE_GROUP="rg-dp100-l${suffix}"
+RESOURCE_GROUP="rg-dp100-lab11"
 REGIONS=("eastus" "westus" "centralus" "northeurope" "westeurope")
 RANDOM_REGION=${REGIONS[$RANDOM % ${#REGIONS[@]}]}
-WORKSPACE_NAME="mlw-dp100-l${suffix}"
-COMPUTE_INSTANCE="ci${suffix}"
+WORKSPACE_NAME="mlw-dp100-lab11"
+COMPUTE_INSTANCE="ci0123"
 COMPUTE_CLUSTER="aml-cluster"
 
 # Register the Azure Machine Learning and additional resource providers in the subscription
