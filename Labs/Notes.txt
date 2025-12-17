@@ -1,0 +1,234 @@
+
+# Resouces
+- Workspace
+- Compute resources
+- Datastores
+
+
+# Assets
+- Models
+- Environments
+- Data
+- Components
+- Jobs
+- Pipelines
+- Endpoints
+
+
+
+# Datastores
+- workspaceartifactstore: Connects to the azureml container of the Azure Storage account created with the workspace. 
+                            Used to store compute and experiment logs when running jobs.
+
+- workspaceworkingdirectory: Connects to the file share of the Azure Storage account created with the workspace used by 
+                            the Notebooks section of the studio. Whenever you upload files or folders to access from a compute instance, 
+                            the files or folders are uploaded to this file share.
+
+- workspaceblobstore: Connects to the Blob Storage of the Azure Storage account created with the workspace. 
+                            Specifically the azureml-blobstore-... container. Set as the default datastore, 
+                            which means that whenever you create a data asset and upload data, you store the data in this container.
+
+- workspacefilestore: Connects to the file share of the Azure Storage account created with the workspace. 
+                            Specifically the azureml-filestore-... file share.
+
+
+
+# Command: Execute a single script.
+# Sweep: Perform hyperparameter tuning when executing a single script.
+# Pipeline: Run a pipeline consisting of multiple scripts or components.
+
+
+
+
+# For Azure Machine Learning to connect to your data, you need to prefix the URI with the appropriate protocol. 
+    There are three common protocols when working with data in the context of Azure Machine Learning:
+
+    - http(s): Use for data stores publicly or privately in an Azure Blob Storage or publicly available http(s) location.
+    - abfs(s): Use for data stores in an Azure Data Lake Storage Gen 2.
+    - azureml: Use for data stored in a datastore.
+
+
+
+# Datastores: The benefits of using datastores are:
+    - Provides easy-to-use URIs to your data storage.
+    - Facilitates data discovery within Azure Machine Learning.
+    - Securely stores connection information, without exposing secrets and keys to data scientists.
+
+
+
+# Data Assets: The benefits of using data assets are:
+    - Share and reuse data with other members of the team such that they don't need to remember file locations.
+    - Seamlessly access data during model training (on any supported compute type) without worrying about connection strings or data paths.
+    - Version the metadata of the data asset.
+
+
+    # 3 types of data assets:
+        - URI file: Points to a specific file.
+        - URI folder: Points to a folder.
+        - MLTable: Points to a folder or file, and includes a schema to read as tabular data.
+
+
+
+
+# Compute Types:
+
+    * Compute instance: Behaves similarly to a virtual machine and is primarily used to run notebooks. It's ideal for experimentation.
+    * Compute clusters: Multi-node clusters of virtual machines that automatically scale up or down to meet demand. A cost-effective way to run scripts that need to process large volumes of data. Clusters also allow you to use parallel processing to distribute the workload and reduce the time it takes to run a script.
+    * Kubernetes clusters: Cluster based on Kubernetes technology, giving you more control over how the compute is configured and managed. You can attach your self-managed Azure Kubernetes (AKS) cluster for cloud compute, or an Arc Kubernetes cluster for on-premises workloads.
+    * Attached compute: Allows you to attach existing compute like Azure virtual machines or Azure Databricks clusters to your workspace.
+    * Serverless compute: A fully managed, on-demand compute you can use for training jobs.
+ 
+
+
+
+# Custom logging with MLflow
+    * mlflow.log_param(): Logs a single key-value parameter. Use this function for an input parameter you want to log.
+    * mlflow.log_metric(): Logs a single key-value metric. Value must be a number. Use this function for any output you want to store with the run.
+    * mlflow.log_artifact(): Logs a file. Use this function for any plot you want to log, save as image file first.
+    * mlflow.log_model(): Logs a model. Use this function to create an MLflow model, which may include a custom signature, environment, and input examples.
+
+
+
+
+
+# Search Space: The set of hyperparameter values tried during hyperparameter tuning
+    * Discrete: 
+        - Python list (Choice(values=[10,20,30])), 
+        - a range (Choice(values=range(1,10))), or 
+        - an arbitrary set of comma-separated values (Choice(values=(30,50,100)))
+
+        - QUniform(min_value, max_value, q): Returns a value like round(Uniform(min_value, max_value) / q) * q
+        - QLogUniform(min_value, max_value, q): Returns a value like round(exp(Uniform(min_value, max_value)) / q) * q
+        - QNormal(mu, sigma, q): Returns a value like round(Normal(mu, sigma) / q) * q
+        - QLogNormal(mu, sigma, q): Returns a value like round(exp(Normal(mu, sigma)) / q) * q
+
+    * Continuous:
+        - Uniform(min_value, max_value): Returns a value uniformly distributed between min_value and max_value
+        - LogUniform(min_value, max_value): Returns a value drawn according to exp(Uniform(min_value, max_value)) so that the logarithm of the return value is uniformly distributed
+        - Normal(mu, sigma): Returns a real value that's normally distributed with mean mu and standard deviation sigma
+        - LogNormal(mu, sigma): Returns a value drawn according to exp(Normal(mu, sigma)) so that the logarithm of the return value is normally distributed
+
+
+
+
+
+
+# Sweep jobs: To run a sweep job the training script must have the following 2 things:
+    1. Include an argument for each hyperparameter you want to vary.
+    2. Log the target performance metric with MLflow. A logged metric enables the sweep job to evaluate 
+        the performance of the trials it initiates, and identify the one that produces the best performing model.
+
+
+
+
+
+
+
+# Early termination policy for Sweep jobs:
+There are 2 main parameters when you choose to use an early termination policy:
+
+    - evaluation_interval: Specifies at which interval you want the policy to be evaluated. 
+                           Every time the primary metric is logged for a trial counts as an interval.
+    - delay_evaluation: Specifies when to start evaluating the policy. This parameter allows for at least 
+                        a minimum of trials to complete without an early termination policy affecting them.
+
+
+    There are three options for early termination:
+
+    * Bandit policy: Uses a slack_factor (relative) or slack_amount(absolute). Any new model must perform 
+                        within the slack range of the best performing model.
+    * Median stopping policy: Uses the median of the averages of the primary metric. 
+                        Any new model must perform better than the median.
+    * Truncation selection policy: Uses a truncation_percentage, which is the percentage of lowest performing trials. 
+                        Any new model must perform better than the lowest performing trials.
+
+
+
+
+
+
+# Components: consists of 3 parts.
+    - Metadata: Includes the component's name, version, etc.
+    - Interface: Includes the expected input parameters (like a dataset or hyperparameter) and expected output (like metrics and artifacts).
+    - Command, code and environment: Specifies how to run the code.
+
+
+
+
+# Pipeline
+    - The pipeline is built by defining the function pipeline_function_name.
+    - The pipeline function expects pipeline_job_input as the overall pipeline input.
+    - The first pipeline step requires a value for the input parameter input_data. The value for the input will be the value of pipeline_job_input.
+    - The first pipeline step is defined by the loaded component for prep_data.
+    - The value of the output_data of the first pipeline step is used for the expected input training_data of the second pipeline step.
+    - The second pipeline step is defined by the loaded component for train_model and results in a trained model referred to by model_output.
+    - Pipeline outputs are defined by returning variables from the pipeline function. There are two outputs:
+        - pipeline_job_transformed_data with the value of prep_data.outputs.output_data
+        - pipeline_job_trained_model with the value of train_model.outputs.model_output
+
+
+
+
+
+
+# MLflow Models: There are three types of models you can register:
+
+    - MLflow: Model trained and tracked with MLflow. Recommended for standard use cases.
+    - Custom: Model type with a custom standard not currently supported by Azure Machine Learning.
+    - Triton: Model type for deep learning workloads. Commonly used for TensorFlow and PyTorch model deployments.
+
+
+
+# Endpoints: there are two types of online endpoints:
+
+    - Managed online endpoints: AML manages all the underlying infrastructure.
+    - Kubernetes online endpoints: Users manage the Kubernetes cluster which provides the necessary infrastructure.
+
+
+
+
+# Deploying a model to an endpoint: 
+
+To deploy a model, you must have:
+    - Model files stored on local path or registered model.
+    - A scoring script.
+    - An execution environment.
+
+You need to specify 4 things:
+    - Model assets like the model pickle file, or a registered model in the Azure Machine Learning workspace.
+    - Scoring script that loads the model.
+    - Environment which lists all necessary packages that need to be installed on the compute of the endpoint.
+    - Compute configuration incl. the needed compute size and scale settings to ensure you can handle the amount of requests the endpoint will receive.
+
+
+The scoring script needs to include two functions:
+    - init(): Called when the service is initialized.
+    - run(): Called when new data is submitted to the service.
+
+
+
+
+
+
+
+# Responsible AI
+
+    * Fairness
+    * Reliability & Safety
+    * Privacy & Security
+    * Inclusiveness
+    * Transparency
+    * Accountability 
+
+
+# Model Benchmarks
+    * Accuracy - Compares model-generated text with correct answer according to the dataset. Result is one if generated text matches the answer exactly, and zero otherwise.
+    * Coherence - Measures whether the model output flows smoothly, reads naturally, and resembles human-like language.
+    * Fluency - Assesses how well the generated text adheres to grammatical rules, syntactic structures, and appropriate usage of vocabulary, resulting in linguistically correct and natural-sounding responses.
+    * Groundedness -	Measures alignment between the model's generated answers and the input data.
+    * GPT Similarity - Quantifies the semantic similarity between a ground truth sentence (or document) and the prediction sentence generated by an AI model.
+    * Quality index - A comparative aggregate score between 0 and 1, with better-performing models scoring a higher value
+    * Cost - The cost of using the model based on a price-per-token. Cost is a useful metric with which to compare quality, enabling you to determine an appropriate tradeoff for your needs.
+
+
+
